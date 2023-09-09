@@ -21,7 +21,7 @@ export default function UISideBarLink({
     <div className="w-ful group px-[4px]">
       <Link
         href={href}
-        className="flex rounded px-[8px] py-[4px] text-[#37352f] group-hover:bg-[#37352f] group-hover:bg-opacity-10"
+        className="group-hover:bg-primary flex rounded px-[8px] py-[4px] group-hover:bg-opacity-10"
         style={{
           paddingLeft: indentation + 8 + 'px',
         }}

@@ -3,6 +3,7 @@ import UISideBar from '@/components/ui/sidebar';
 import UISideBarCategory from '@/components/ui/sidebar/category';
 import UISideBarLink from '@/components/ui/sidebar/link';
 import UISideBarToggle from '@/components/ui/sidebar/toggle';
+import ShareSideBarAuth from './auth';
 
 export default function ShareSideBar() {
   return (
@@ -11,55 +12,55 @@ export default function ShareSideBar() {
         <UISideBarLink
           title="01 - Glarlroot"
           icon={<UIIconEmoji emoji="🪵" />}
-          href="/"
+          href="/amardrassil/glarlroot"
           indentation={20}
         />
         <UISideBarLink
           title="02 - Igira"
           icon={<UIIconEmoji emoji="👣" />}
-          href="/"
+          href="/amardrassil/igira"
           indentation={20}
         />
         <UISideBarLink
           title="03 - Volcoross"
           icon={<UIIconEmoji emoji="🐍" />}
-          href="/"
+          href="/amardrassil/volcoross"
           indentation={20}
         />
         <UISideBarLink
           title="04 - Council"
           icon={<UIIconEmoji emoji="👪" />}
-          href="/"
+          href="/amardrassil/council"
           indentation={20}
         />
         <UISideBarLink
           title="05 - Larodar"
           icon={<UIIconEmoji emoji="🐴" />}
-          href="/"
+          href="/amardrassil/larodar"
           indentation={20}
         />
         <UISideBarLink
           title="06 - Nymue"
           icon={<UIIconEmoji emoji="🍀" />}
-          href="/"
+          href="/amardrassil/nymue"
           indentation={20}
         />
         <UISideBarLink
           title="07 - Smolderon"
           icon={<UIIconEmoji emoji="🔥" />}
-          href="/"
+          href="/amardrassil/smolderon"
           indentation={20}
         />
         <UISideBarLink
           title="08 - Tindral"
           icon={<UIIconEmoji emoji="🐉" />}
-          href="/"
+          href="/amardrassil/tindral"
           indentation={20}
         />
         <UISideBarLink
           title="09 - Fyrakk"
           icon={<UIIconEmoji emoji="☄️" />}
-          href="/"
+          href="/amardrassil/fyrakk"
           indentation={20}
         />
       </UISideBarToggle>
@@ -84,6 +85,7 @@ export default function ShareSideBar() {
         icon={<UIIconEmoji emoji="📊" />}
         href="/trinkets"
       />
+      <ShareSideBarAuth />
     </UISideBar>
   );
 }

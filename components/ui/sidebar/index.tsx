@@ -6,9 +6,9 @@ export type UISideBarProps = {
 export default function UISideBar({ children }: UISideBarProps) {
   return (
     <>
-      <div className="fixed left-0 top-0 h-full w-[240px] bg-[#fbfbfa] py-[8px] shadow">
-        {children}
-      </div>
+      <nav className="fixed left-0 top-0 h-full w-[240px] bg-[#fbfbfa] py-[8px] text-primary shadow">
+        <div className="flex h-full flex-col overflow-y-scroll">{children}</div>
+      </nav>
       <div className="h-full w-[240px]" />
     </>
   );

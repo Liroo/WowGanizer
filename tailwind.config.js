@@ -1,24 +1,27 @@
 const config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./flux/**/*.{js,ts,jsx,tsx,mdx}",
-    "./hook/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './flux/**/*.{js,ts,jsx,tsx,mdx}',
+    './hook/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
+      colors: {
+        primary: '#37352f',
+      },
       height: {
-        screen: "calc(var(--vh) * 100)",
+        screen: 'calc(var(--vh) * 100)',
       },
       minHeight: {
-        screen: "calc(var(--vh) * 100)",
+        screen: 'calc(var(--vh) * 100)',
       },
     },
     screens: {
-      tablet: "640px",
-      laptop: "1024px",
-      desktop: "1440px",
+      tablet: '640px',
+      laptop: '1024px',
+      desktop: '1440px',
     },
   },
   plugins: [],
