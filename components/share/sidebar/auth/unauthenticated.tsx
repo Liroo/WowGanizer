@@ -64,6 +64,7 @@ export default function ShareSideBarAuthUnauthenticated() {
               onChange={onChange}
               placeholder="Email"
               disabled={isLoading}
+              autoComplete="email"
             />
           )}
           name="email"
@@ -81,6 +82,7 @@ export default function ShareSideBarAuthUnauthenticated() {
                 type="password"
                 onBlur={onBlur}
                 onChange={onChange}
+                autoComplete="current-password"
                 placeholder="Password"
                 disabled={isLoading}
               />

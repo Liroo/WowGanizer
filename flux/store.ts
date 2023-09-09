@@ -1,4 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { createWrapper } from 'next-redux-wrapper';
 import {
   FLUSH,
   PAUSE,
@@ -16,36 +17,41 @@ import statusSlice from './status/reducer';
 import toastSlice from './toast/reducer';
 import userSlice from './user/reducer';
 
-const rootReducer = combineReducers({
-  auth: authSlice.reducer,
-  status: statusSlice.reducer,
-  toast: toastSlice.reducer,
-  user: userSlice.reducer,
-});
+const makeStore = () => {
+  const rootReducer = combineReducers({
+    auth: authSlice.reducer,
+    status: statusSlice.reducer,
+    toast: toastSlice.reducer,
+    user: userSlice.reducer,
+  });
 
-const persistConfig = {
-  key: 'root',
-  version: 1,
-  storage,
-  whitelist: [],
+  const persistConfig = {
+    key: 'root',
+    version: 1,
+    storage,
+    whitelist: [],
+  };
+
+  const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+  const store = configureStore({
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: {
+          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        },
+      }).prepend(listenerMiddleware.middleware),
+    devTools: process.env.NODE_ENV !== 'production',
+  });
+
+  (store as any).__persisitor = persistStore(store);
+
+  return store;
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+export type AppStore = ReturnType<typeof makeStore>;
+export type RootState = ReturnType<AppStore['getState']>;
+export type AppDispatch = AppStore['dispatch'];
 
-const store = configureStore({
-  reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }).prepend(listenerMiddleware.middleware),
-  devTools: process.env.NODE_ENV !== 'production',
-});
-
-(store as any).__persisitor = persistStore(store);
-
-export default store;
-
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export const wrapper = createWrapper<AppStore>(makeStore);

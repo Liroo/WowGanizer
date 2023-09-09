@@ -73,6 +73,7 @@ export type ItemType = {
   id: number;
   patch: string;
   name: string;
+  wowheadUrl: string;
 
   class: ItemClassTypeEnum;
   inventoryType: ItemInventoryTypeEnum;

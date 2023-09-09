@@ -12,7 +12,6 @@ export const selectUser = createSelector([selectUserReducer], (userReducer) => {
 export const selectUserMe = createSelector(
   [selectUserReducer, selectAuthReducer],
   (userReducer, authReducer) => {
-    console.log(userReducer, authReducer);
     return userReducer.hash[authReducer.uid || ''];
   },
 );
