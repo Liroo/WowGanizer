@@ -28,7 +28,10 @@ export const initUser = createAsyncThunk<void, void, ClubThunkApiConfig>(
         FirestoreCollection.Users,
         auth.currentUser?.uid,
       ) as DocumentReference<UserType, any>,
-      { email: auth.currentUser?.email, lastLogin: new Date().toISOString() },
+      {
+        email: auth.currentUser?.email,
+        lastLogin: new Date().toISOString(),
+      },
       { merge: true },
     );
     dispatch(setUser(user as unknown as UserType));
