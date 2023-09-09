@@ -25,6 +25,14 @@ export default function ShareSideBarAuthAuthenticated() {
     <div>
       <div className="mb-[8px] flex items-end px-[8px] pt-[4px]">
         <p className="whitespace-nowrap text-[12px] font-semibold text-primary text-opacity-50">
+          Type
+        </p>
+        <p className="ml-auto text-[12px]">
+          {userMe?.admin ? 'Admin' : 'User'}
+        </p>
+      </div>
+      <div className="mb-[8px] flex items-end px-[8px] pt-[4px]">
+        <p className="whitespace-nowrap text-[12px] font-semibold text-primary text-opacity-50">
           Mail
         </p>
         <p className="ml-auto text-[12px]">{userMe?.email}</p>
