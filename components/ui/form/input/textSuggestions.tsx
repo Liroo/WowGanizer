@@ -47,7 +47,7 @@ export default function UIFormInputTextSuggestions({
       </div>
 
       {focused && (
-        <div className="absolute left-0 top-[30px] z-10 max-h-[210px] min-h-[10px] w-full overflow-y-scroll rounded border border-primary border-opacity-60 bg-[#fbfbfa] shadow-sm">
+        <div className="absolute left-0 top-[30px] z-10 max-h-[210px] min-h-[10px] w-full overflow-y-auto rounded border border-primary border-opacity-60 bg-[#fbfbfa] shadow-sm">
           {suggestions
             .filter(
               (suggestion) =>

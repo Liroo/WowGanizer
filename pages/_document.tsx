@@ -16,7 +16,7 @@ class MyDocument extends Document {
     return (
       <Html
         lang="en-EN"
-        className="overflow-x-hidden overflow-y-scroll overscroll-none"
+        className="overflow-y-auto overflow-x-hidden overscroll-none"
       >
         <Head>
           <meta
