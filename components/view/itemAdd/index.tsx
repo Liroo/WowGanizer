@@ -583,7 +583,7 @@ export default function ViewItemAdd() {
                 onChange={onChange}
                 value={value}
                 placeholder="Description"
-                className={`mt-0 w-[408px] ${
+                className={`mt-0 w-[408px] max-w-[408px] ${
                   errors.description ? 'border-[#eb5757]' : ''
                 }`}
                 disabled={isLoading}
@@ -595,7 +595,7 @@ export default function ViewItemAdd() {
 
         <UIFormInputButton
           type="submit"
-          className="w-[200px] bg-[#2383e2] font-semibold text-white"
+          className="w-[200px] max-w-[200px] bg-[#2383e2] font-semibold text-white"
           disabled={isLoading}
         >
           {isLoading ? <UILoadingThreeDot /> : 'Add item'}
