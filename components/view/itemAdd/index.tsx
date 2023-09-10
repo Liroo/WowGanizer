@@ -231,7 +231,7 @@ export default function ViewItemAdd() {
               />
             </div>
             <div className="ml-[16px] flex items-end justify-start py-[8px]">
-              <a href={wowheadUrl}></a>
+              <a target="_blank" href={wowheadUrl}></a>
             </div>
           </div>
           <div className="flex w-full">
