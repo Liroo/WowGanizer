@@ -66,13 +66,11 @@ export enum ItemSourceEnum {
 export type ItemSourceType = {
   title: string;
   description: string;
-  url: string;
 };
 
 export type ItemType = {
-  id: number;
+  id: string;
   patch: string;
-  name: string;
   wowheadUrl: string;
 
   class: ItemClassTypeEnum;
@@ -80,7 +78,8 @@ export type ItemType = {
 
   stats: StatEnum[];
   statsDetails: ItemTypeStatDetail[];
+  description: string;
 
-  sourceType: ItemSourceEnum[];
+  sourceType: ItemSourceEnum;
   source: ItemSourceType;
 };

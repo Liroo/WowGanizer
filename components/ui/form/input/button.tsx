@@ -12,7 +12,7 @@ export default function UIFormInputButton({
     <div
       className={`my-[4px] flex h-[32px] w-full items-center justify-center rounded border border-primary border-opacity-30 ${className} ${
         props.disabled ? 'opacity-70' : ''
-      }`}
+      } hover:opacity-90`}
     >
       <button {...props} className={`h-full w-full ${buttonClassName}`} />
     </div>

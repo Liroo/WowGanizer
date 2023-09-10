@@ -58,7 +58,7 @@ export default function ShareSideBarAuthUnauthenticated() {
               message: 'Invalid email address',
             },
           }}
-          render={({ field: { onChange, onBlur, value } }) => (
+          render={({ field: { onChange, onBlur } }) => (
             <UIFormInputText
               onBlur={onBlur}
               onChange={onChange}
@@ -77,7 +77,7 @@ export default function ShareSideBarAuthUnauthenticated() {
               required: true,
               minLength: 6,
             }}
-            render={({ field: { onChange, onBlur, value } }) => (
+            render={({ field: { onChange, onBlur } }) => (
               <UIFormInputText
                 type="password"
                 onBlur={onBlur}

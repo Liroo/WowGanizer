@@ -12,6 +12,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import authSlice from './auth/reducer';
+import itemSlice from './item/reducer';
 import listenerMiddleware from './listenerMiddleware';
 import statusSlice from './status/reducer';
 import toastSlice from './toast/reducer';
@@ -20,6 +21,7 @@ import userSlice from './user/reducer';
 const makeStore = () => {
   const rootReducer = combineReducers({
     auth: authSlice.reducer,
+    item: itemSlice.reducer,
     status: statusSlice.reducer,
     toast: toastSlice.reducer,
     user: userSlice.reducer,

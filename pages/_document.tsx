@@ -14,7 +14,10 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en-EN" className="overflow-y-scroll overscroll-none">
+      <Html
+        lang="en-EN"
+        className="overflow-x-hidden overflow-y-scroll overscroll-none"
+      >
         <Head>
           <meta
             name="apple-mobile-web-app-status-bar-style"
